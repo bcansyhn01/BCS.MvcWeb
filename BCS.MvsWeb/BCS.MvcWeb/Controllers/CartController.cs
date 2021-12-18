@@ -42,6 +42,7 @@ namespace BCS.MvcWeb.Controllers
         }
 
         public Cart GetCart()
+            //siparişi tamamla
         {
             var cart = Session["Cart"];
             if (cart==null)

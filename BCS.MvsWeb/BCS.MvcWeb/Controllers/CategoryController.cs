@@ -44,7 +44,7 @@ namespace BCS.MvcWeb.Controllers
 
         // POST: Category/Create
         // Aşırı gönderim saldırılarından korunmak için bağlamak istediğiniz belirli özellikleri etkinleştirin. 
-        // Daha fazla bilgi için bkz. https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Description")] Category category)
@@ -60,8 +60,9 @@ namespace BCS.MvcWeb.Controllers
         }
 
         // GET: Category/Edit/5
+        //kategori güncelle
         public ActionResult Edit(int? id)
-        {
+            {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -76,7 +77,7 @@ namespace BCS.MvcWeb.Controllers
 
         // POST: Category/Edit/5
         // Aşırı gönderim saldırılarından korunmak için bağlamak istediğiniz belirli özellikleri etkinleştirin. 
-        // Daha fazla bilgi için bkz. https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Description")] Category category)

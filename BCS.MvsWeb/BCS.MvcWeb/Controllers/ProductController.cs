@@ -38,6 +38,7 @@ namespace BCS.MvcWeb.Controllers
         }
 
         // GET: Product/Create
+        //yeni ürün ekleme
         public ActionResult Create()
         {
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
@@ -46,7 +47,7 @@ namespace BCS.MvcWeb.Controllers
 
         // POST: Product/Create
         // Aşırı gönderim saldırılarından korunmak için bağlamak istediğiniz belirli özellikleri etkinleştirin. 
-        // Daha fazla bilgi için bkz. https://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Description,Price,Stock,Image,IsHome,IsApproved,CategoryId")] Product product)
@@ -63,6 +64,7 @@ namespace BCS.MvcWeb.Controllers
         }
 
         // GET: Product/Edit/5
+        //ürünün içindeki  kategorisini güncelleme kısmı
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,7 +82,7 @@ namespace BCS.MvcWeb.Controllers
 
         // POST: Product/Edit/5
         // Aşırı gönderim saldırılarından korunmak için bağlamak istediğiniz belirli özellikleri etkinleştirin. 
-        // Daha fazla bilgi için bkz. https://go.microsoft.com/fwlink/?LinkId=317598.
+        //ürünü güncelleme (Edit Metodu)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Description,Price,Stock,Image,IsHome,IsApproved,CategoryId")] Product product)
@@ -96,6 +98,7 @@ namespace BCS.MvcWeb.Controllers
         }
 
         // GET: Product/Delete/5
+        //ürünü silme
         public ActionResult Delete(int? id)
         {
             if (id == null)
